@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="index">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<link type="text/css" rel="stylesheet" href="../jquery_mobile/jquery.mobile-1.2.0.css">
+		<link type="text/css" rel="stylesheet" href="../css/menu.css" />
+		<link type="text/css" rel="stylesheet" href="../css/jquery.mmenu.css" />
+		<link type="text/css" rel="stylesheet" href="../css/jquery.mmenu.themes.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../jquery/jquery.mmenu.js"></script>
+		<script type="text/javascript" src="../js/menu.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		
+
+	</head>
+
+	<center>
+	<body>
+		
+		<div data-role='page' >
+
+			<!--Cabecera-->
+			<div data-role='header' id="header">
+				<a href="#menu" data-ajax="false"></a>
+				<img src="../images/Escudo_CR.png" data-inline="true" height="42" width="42" style="float:right;">
+				<h1 > Diputados </h1>
+			</div>
+
+			<!--Contenido-->
+			<div data-role='content'>
+				<ul data-role="listview" data-theme="g" class="lista" data-filter="true" data-filter-placeholder="Buscar Diputado..." data-inset="true">
+					<script type="text/javascript" src="../js/funcion_cargar_lista_diputados_busqueda_avanzada.js"> </script>
+				</ul>
+
+			</div>
+
+			<!--Pie de pagina-->
+			<div data-role='footer'>
+				<h4> Instituto Tecnológico de Costa Rica </h4>				
+				
+			</div>	
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li><a rel="external" href="../main.html">Inicio</a></li>
+				<li><a rel="external" href="log_in.html">Usuario</a></li>
+				<li><a rel="external" href="lista_diputados.html">Lista total</a></li>
+				<li><a rel="external" href="rankings.html">Rankings</a></li>
+				<li><a rel="external" href="buscar_por_provincia.html">Buscar por provincia</a></li>
+				<li><a rel="external" href="buscar_por_partido.html">Buscar por partido</a></li>
+				<li><a rel="external" href="buscar_avanzado.html">Busqueda avanzada</a></li>
+				<li><a rel="external" href="../main.html">Salir</a></li>
+				
+			</ul>
+		</nav>
+	</body>
+	</center>
+
+</html>

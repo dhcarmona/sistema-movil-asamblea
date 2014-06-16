@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="index">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<link type="text/css" rel="stylesheet" href="../jquery_mobile/jquery.mobile-1.2.0.css">
+		<link type="text/css" rel="stylesheet" href="../css/menu.css" />
+		<link type="text/css" rel="stylesheet" href="../css/jquery.mmenu.css" />
+		<link type="text/css" rel="stylesheet" href="../css/jquery.mmenu.themes.css" />
+
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script>
+			$(document).bind('mobileinit',function(){
+			$.mobile.selectmenu.prototype.options.nativeMenu = false;
+			});
+		</script>
+		<script  type="text/javascript" >
+			function buscar(){
+
+					var elem = document.getElementById("select-choice-custom");
+					selectedNode = elem.options[elem.selectedIndex];
+					var partido = selectedNode.value;
+
+					var elem2 = document.getElementById("select-choice-custom2");
+					selectedNode2 = elem2.options[elem2.selectedIndex];
+					var provincia = selectedNode2.value;
+
+					var nombre = $('#name').val();
+
+					var direccion = 
+					'http://tec-asamblea.herokuapp.com/api/asamblea/busqueda_diputados.json?provincia=' + provincia + '&partido=' + partido + '&nombre=' + nombre; 
+
+					localStorage.setItem("busqueda_avanzada", direccion);
+					document.location='lista_diputados_busqueda_avanzada.html';
+					return false;
+
+
+			}
+		</script>
+		<script type="text/javascript" src="../jquery/jquery.mmenu.js"></script>
+		<script type="text/javascript" src="../js/menu.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+		
+
+	</head>
+
+	<center>
+	<body>
+		
+		<div data-role='page' >
+
+			<!--Cabecera-->
+			<div data-role='header' id="header">
+				<a href="#menu" data-ajax="false"></a>
+				<img src="../images/Escudo_CR.png" data-inline="true" height="42" width="42" style="float:right;">
+				<h1 > Buscar </h1>
+			</div>
+
+			<!--Contenido-->
+			<div data-role='content'>
+					 
+					 <h3> Busqueda Avanzada </h3>
+					 <br>
+
+					 <label for="select-choice-custom3" class="select">Nombre</label>
+					 <input id="name" data-role="fieldcontain" type="text" name="usuario">
+				
+						<div data-role="fieldcontain">
+							<label for="select-choice-custom" class="select">Partido</label>
+							<select name="select-choice-1" id="select-choice-custom" data-native-menu="false">
+								<option value="LIBERACIÓN NACIONAL">Partido Liberación Nacional</option>
+								<option value="ACCIÓN CIUDADANA">Partido Acción Ciudadana</option>
+								<option value="FRENTE AMPLIO">Frente Amplio</option>
+								<option value="UNIDAD SOCIAL CRISTIANA">Partido Unidad Social Cristiana</option>
+								<option value="MOVIMIENTO LIBERTARIO">Movimiento Libertario</option>
+								<option value="RENOVACIÓN COSTARRICENSE">Renovación Costarricense</option>
+								<option value="ACCESIBILIDAD SIN EXCLUSIÓN">Partido Accesibilidad sin Exclusión</option>
+								<option value="RESTAURACIÓN NACIONAL">Partido Restauración Nacional</option>
+								<option value="ALIANZA DEMOCRÁTICA CRISTIANA">Alianza Demócrata Cristiana</option>
+							</select>
+						</div>
+
+						<div data-role="fieldcontain">
+							<label for="select-choice-custom2" class="select">Provincia</label>
+							<select name="select-choice-2" id="select-choice-custom2" data-native-menu="false">
+								<option value="SAN JOSE">San José</option>
+								<option value="GUANACASTE">Guanacaste</option>
+								<option value="ALAJUELA">Alajuela</option>
+								<option value="CARTAGO">Cartago</option>
+								<option value="LIMON">Limón</option>
+								<option value="HEREDIA">Heredia</option>
+								<option value="PUNTARENAS">Puntarenas</option>
+							</select>
+						</div>
+
+						<br><br><br><br>
+				
+					 <button type="button" onclick="buscar()">Buscar</button>
+
+					 	<br>
+				
+			</div>
+
+			<!--Pie de pagina-->
+			<div data-role='footer'>
+				<h4> Instituto Tecnológico de Costa Rica </h4>				
+				
+			</div>	
+			<br><br>
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li><a rel="external" href="../main.html">Inicio</a></li>
+				<li><a rel="external" href="log_in.html">Usuario</a></li>
+				<li><a rel="external" href="lista_diputados.html">Lista total</a></li>
+				<li><a rel="external" href="rankings.html">Rankings</a></li>
+				<li><a rel="external" href="buscar_por_provincia.html">Buscar por provincia</a></li>
+				<li><a rel="external" href="buscar_por_partido.html">Buscar por partido</a></li>
+				<li><a rel="external" href="buscar_avanzado.html">Busqueda avanzada</a></li>
+				<li><a rel="external" href="../main.html">Salir</a></li>
+				
+			</ul>
+		</nav>
+	</body>
+	</center>
+
+</html>

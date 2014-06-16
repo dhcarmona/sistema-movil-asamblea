@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="index">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<link type="text/css" rel="stylesheet" href="jquery_mobile/jquery.mobile-1.2.0.css">
+		<link type="text/css" rel="stylesheet" href="css/menu.css" />
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.themes.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery/jquery.mmenu.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" >
+
+		function cargar(){
+							
+							var picture = getURLParameter('imagen');
+							var quest = getURLParameter('pregunta');
+							var answ = getURLParameter('respuesta');
+
+							jQuery("#imagen").attr('src', picture);
+							$( "#question" ).append( quest);
+							$( "#answer" ).append(answ);
+
+							}
+
+		function getURLParameter(name) {
+							 return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+							}
+
+		</script>
+		
+
+	</head>
+
+	<center>
+	<body onload="cargar();">
+		
+		<div data-role='page' >
+
+			<!--Cabecera-->
+			<div data-role='header' id="header">
+				<a href="#menu" data-ajax="false"></a>
+				<img src="images/Escudo_CR.png" data-inline="true" height="42" width="42" style="float:right;">
+				<h1 > Pregunta </h1>
+			</div>
+
+
+			<!--Contenido-->
+			<div data-role='content' style="background:#FFFFFF;">	
+														
+
+						<h3 id="question"></h3>					
+						<h5 id="answer"></h5>
+
+			<!--Dashboard-->
+
+						<div style="background:#0086D9; height: 175px; width: 335px;">
+
+								<img id='imagen' src="http://www.subinet.es/wp-content/uploads/2010/03/batman-for-facebook.jpg" style="padding:10px;" Align="left" width="313" height="160">				
+
+						</div>
+
+						<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+						<br>
+						<center><img onclick="window.open('https://twitter.com/intent/tweet?in_reply_to=478268226883682305');return false;" rel="external" src="twitter.png" width="100" height="46"></center>
+						
+					
+
+
+			</div>
+
+			
+			<!--Pie de pagina-->
+			<div data-role='footer'>
+				<h4> Instituto Tecnológico de Costa Rica </h4>				
+				
+			</div>	
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li><a rel="external" href="../main.html">Inicio</a></li>
+				<li><a rel="external" href="log_in.html">Usuario</a></li>
+				<li><a rel="external" href="lista_diputados.html">Lista total</a></li>
+				<li><a rel="external" href="rankings.html">Rankings</a></li>
+				<li><a rel="external" href="buscar_por_provincia.html">Buscar por provincia</a></li>
+				<li><a rel="external" href="buscar_por_partido.html">Buscar por partido</a></li>
+				<li><a rel="external" href="buscar_avanzado.html">Busqueda avanzada</a></li>
+				<li><a rel="external" href="../main.html">Salir</a></li>
+				
+			</ul>
+		</nav>
+
+		
+
+	</body>
+	</center>
+
+</html>
